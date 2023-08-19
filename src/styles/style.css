@@ -1,0 +1,85 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Roboto', sans-serif;
+}
+:root{
+    --card-bg:#f8fafc;
+    --btn-bg:#06b6d4;
+    --input-bg: #e5e7eb;
+}
+body{
+    background-color: #e5e7eb;
+    padding: 40px;
+}
+.app--container{
+    display: flex;
+    gap: 20px;
+}
+.left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap:20px;
+}
+.form--container{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.personal--navbar{
+    padding: 14px;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--card-bg);
+    border-radius: 6px;
+}
+.tab--btn{
+    background-color: var(--btn-bg);
+    color: var(--card-bg);
+    padding: 14px;
+    max-width: 130px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.04rem;
+}
+.personal--form{
+    background-color: var(--card-bg) ;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    height: 420px;
+    gap: 10px;
+    border-radius: 8px;
+}
+.personal--form input{
+    padding: 7px 10px;
+    border-radius: 8px;
+    max-width: 380px;
+    font-size: 0.9rem;
+    border: none;
+    background-color: var(--input-bg);
+    margin-bottom: 10px;
+}
+.form--header-text{
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.personal--form label{
+    font-weight: 500;
+}
+.education--form{
+    background-color: var(--card-bg) ;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 8px;
+    margin-top: 60px;
+}
+.education--form
