@@ -1,16 +1,19 @@
 import React, { useState }  from "react";
 export default function Form(){
-
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = React.useState({
         fullName:"",
         email:"",
         phoneNumber:"",
         address:""
     })
-   function handleChangeEvent(){
-    setFormData(prevData  => {
-    })
+   function handleChangeEvent(event){
+    const{name, value} = event.target
+    return setFormData(prevData  => ({
+        ...prevData,
+        [name]:value    
+    }))
    }
+   console.log(formData)
 
     return(
         <div className="form--container">
@@ -22,15 +25,39 @@ export default function Form(){
         <div className="form personal--form">
                 <h2 className="form--header-text">Personal Details</h2>
                 <label htmlFor="fullName">Full Name</label>
-                <input type="text" name="fullName" className="form--fullName"  />
+                <input 
+                type="text" 
+                name="fullName" 
+                className="form--fullName" 
+                onChange={handleChangeEvent}
+                value={formData.fullName}
+                />
                 <label htmlFor="email">Email</label>
-                <input type="text" name="email" className="form--email" />
+                <input 
+                type="text" 
+                name="email" 
+                className="form--email"
+                onChange={handleChangeEvent}
+                value={formData.email} 
+                />
                 <label htmlFor="phoneNumber">Phone Number</label>
-                <input type="text" name="phoneNumber" className="form--phoneNumber" />
+                <input 
+                type="text" 
+                name="phoneNumber" 
+                className="form--phoneNumber"
+                value={formData.phoneNumber}
+                onChange={handleChangeEvent}
+                />
                 <label htmlFor="address">Address</label>
-                <input type="text" name="address" className="form--address" />
+                <input 
+                type="text" 
+                name="address" 
+                className="form--address"
+                value={formData.address}
+                onChange={handleChangeEvent}
+                />
         </div>
-        <div className="form education--form">
+        {/* <div className="form education--form">
                 <h2 className="form--header-text">Education Details</h2>
                 <label htmlFor="college">College/Institute</label>
                 <input type="text" name="college" className="form--college"  />
@@ -57,7 +84,7 @@ export default function Form(){
                 <textarea type="text" name="jobDescription" className="form--jobDescription" 
                 maxLength={60} rows={4} 
                 placeholder="Explain your role/work in your previous job (max-60 words)" />
-        </div>
+        </div> */}
         </div>
         
     )
