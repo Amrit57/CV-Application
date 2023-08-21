@@ -48,16 +48,15 @@ body{
     font-weight: 600;
     letter-spacing: 0.04rem;
 }
-.personal--form{
+.form{
     background-color: var(--card-bg) ;
     padding: 26px;
     display: flex;
     flex-direction: column;
-    height: 420px;
     gap: 10px;
     border-radius: 8px;
 }
-.personal--form input{
+.form input, textarea{
     padding: 7px 10px;
     border-radius: 8px;
     max-width: 380px;
@@ -70,16 +69,6 @@ body{
     font-size: 1.8rem;
     margin-bottom: 10px;
 }
-.personal--form label{
+.form label{
     font-weight: 500;
 }
-.education--form{
-    background-color: var(--card-bg) ;
-    padding: 26px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border-radius: 8px;
-    margin-top: 60px;
-}
-.education--form
