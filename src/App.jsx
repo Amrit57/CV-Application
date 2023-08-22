@@ -7,7 +7,17 @@ export default function App (){
         fullName:"",
         email:"",
         phoneNumber:"",
-        address:""
+        address:"",
+        college:"",
+        degree:"",
+        startDate:"",
+        endDate:"",
+        company:"",
+        position:"",
+        companyStartDate:"",
+        companyEndDate:"",
+        location:"",
+        jobDescription:""
     })
    function handleChangeEvent(event){
     const{name, value} = event.target

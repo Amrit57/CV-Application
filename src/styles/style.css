@@ -74,11 +74,11 @@ body{
 }
 .cv--container{
     background: var(--card-bg);
-    min-height: 600px;
+    min-height: 700px;
 }
 .cv--header{
     background-color: var(--btn-bg);
-    padding: 20px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,10 +86,17 @@ body{
 }
 .cv--contact{
     display: flex;
-    gap: 40px;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+.contact{
+    margin-right:20px;
 }
 .cv--main{
+    margin: 20px ;
     padding: 18px 40px;
     display: flex;
     flex-direction: column;
@@ -97,11 +104,19 @@ body{
     height: 100%;
     width: 700px;
 }
+.cv--header-text{
+    background-color: var(--input-bg);
+    color: var(--btn-bg);
+    text-align: center;
+    padding: 6px;
+    letter-spacing: 0.2rem;
+    font-size: 1.3rem;
+    margin: 20px 0px;
+}
 .cv--education-detail, .cv--experience-detail{
     display: grid;
     grid-template-columns: repeat(2, 160px 300px);
-    margin:10px 0px;
-    padding: 4px 0px;
+    padding: 10px 0px;
     justify-content: start;
     align-items: start;
     gap: 100px;
