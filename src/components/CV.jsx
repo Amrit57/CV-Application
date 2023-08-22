@@ -1,13 +1,13 @@
 import React from "react";
-export default function CV() {
+export default function CV({formData}) {
   return (
     <div className="cv--container">
       <header className="cv--header">
-        <h1>Amrit Lama Syangbo</h1>
+        <h1>{formData.fullName}</h1>
+        <span className="cv--address">{formData.address}</span>
         <div className="cv--contact" >
-        <p className="cv--email">abcd@gmail.com</p>
-        <p className="cv--phoneNumber">12478498616</p>
-        <p className="cv--address">JeetpurSimara-22, Nepal</p>
+        <p className="cv--phoneNumber">{formData.phoneNumber}</p>
+        <p className="cv--email">{formData.email}</p>
         </div>
       </header>
       <main className="cv--main">

@@ -1,20 +1,5 @@
-import React, { useState }  from "react";
-export default function Form(){
-    const [formData, setFormData] = React.useState({
-        fullName:"",
-        email:"",
-        phoneNumber:"",
-        address:""
-    })
-   function handleChangeEvent(event){
-    const{name, value} = event.target
-    return setFormData(prevData  => ({
-        ...prevData,
-        [name]:value    
-    }))
-   }
-   console.log(formData)
-
+import React from "react";
+export default function Form(props){
     return(
         <div className="form--container">
         <div className="personal--navbar">
@@ -29,32 +14,32 @@ export default function Form(){
                 type="text" 
                 name="fullName" 
                 className="form--fullName" 
-                onChange={handleChangeEvent}
-                value={formData.fullName}
+                onChange={(event)=> props.handleChangeEvent(event)}
+                value={props.formData.fullName}
                 />
                 <label htmlFor="email">Email</label>
                 <input 
                 type="text" 
                 name="email" 
                 className="form--email"
-                onChange={handleChangeEvent}
-                value={formData.email} 
+                onChange={(event)=> props.handleChangeEvent(event)}
+                value={props.formData.email} 
                 />
                 <label htmlFor="phoneNumber">Phone Number</label>
                 <input 
                 type="text" 
                 name="phoneNumber" 
                 className="form--phoneNumber"
-                value={formData.phoneNumber}
-                onChange={handleChangeEvent}
+                value={props.formData.phoneNumber}
+                onChange={(event)=> props.handleChangeEvent(event)}
                 />
                 <label htmlFor="address">Address</label>
                 <input 
                 type="text" 
                 name="address" 
                 className="form--address"
-                value={formData.address}
-                onChange={handleChangeEvent}
+                value={props.formData.address}
+                onChange={(event)=> props.handleChangeEvent(event)}
                 />
         </div>
         {/* <div className="form education--form">
