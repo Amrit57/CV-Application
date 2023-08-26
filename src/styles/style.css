@@ -48,13 +48,31 @@ body{
     font-weight: 600;
     letter-spacing: 0.04rem;
 }
-.form{
+.form, .toggle-menu{
     background-color: var(--card-bg) ;
     padding: 26px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     border-radius: 8px;
+}
+.education--form-header{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 10px;
+
+}
+.education--form-header h2{
+    margin-right: auto;
+}
+.menuIcon{
+    border-radius: 6px;
+    background-color: var(--btn-bg);
+    padding: 0;
+    cursor: pointer;
+    transition: all ease-in-out 0.8s;
 }
 .form input, textarea{
     padding: 7px 10px;
@@ -74,7 +92,7 @@ body{
 }
 .cv--container{
     background: var(--card-bg);
-    min-height: 700px;
+    min-height: 900px;
 }
 .cv--header{
     background-color: var(--btn-bg);
