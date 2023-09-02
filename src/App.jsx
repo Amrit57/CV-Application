@@ -3,7 +3,7 @@ import Form from "./components/Form";
 import CV from "./components/CV"
 
 export default function App (){
-    const [formData, setFormData] = React.useState({
+    const [formData, setFormData] = React.useState( () =>  JSON.parse(localStorage.getItem("datas")) || {
         fullName:"",
         email:"",
         phoneNumber:"",
@@ -19,6 +19,10 @@ export default function App (){
         location:"",
         jobDescription:""
     })
+React.useEffect(() => {
+        localStorage.setItem("datas", JSON.stringify(formData))
+},[formData])
+
    function handleChangeEvent(event){
     const{name, value} = event.target
     return setFormData(prevData  => ({

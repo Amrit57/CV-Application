@@ -54,24 +54,6 @@ export default function CV({formData}) {
             </p>
           </div>
           </div>
-          <div className="cv--experience-detail">
-
-<div>
-  <h4 className="cv--companyName">Xyz ABc Efgh  aldsjlaksn Company</h4>
-  <p>location</p>
-  <span className="cv--duration">2018/4/7 - 2022/10/8</span>
-</div>
-<div>
-  <h4 className="cv--position">
-    Front-End Developer
-  </h4>
-  <p className="cv--job-description">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-    Perspiciatis possimus ducimus esse nesciunt, omnis temporibus
-
-  </p>
-</div>
-</div>
         </section>
       </main>
     </div>

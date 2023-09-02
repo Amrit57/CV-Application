@@ -4,13 +4,12 @@ import { mdiMenuDown, mdiMenuUp } from "@mdi/js";
 export default function Form(props) {
     const [dropdown, setDropDown] = React.useState(false)
     function toggleEducationMenu(){
-        setDropDown( prevValue => !prevValue)
+      setDropDown( prevValue => !prevValue)
     }
     const [dropdownExp, setDropDownExperience] = React.useState(false)
     function toggleExperienceMenu(){
-        setDropDownExperience( prevValue => !prevValue)
+      setDropDownExperience( prevValue => !prevValue)
     }
-
   return (
     <div className="form--container">
       <div className="personal--navbar">
@@ -58,13 +57,11 @@ export default function Form(props) {
         <h2 className="form--header-text">Education Details</h2>
         {
         dropdown ? 
-         <Icon className="menuIcon menuDonw" path={mdiMenuDown} size={1} /> 
-        : <Icon className="menuIcon menuUp" path={mdiMenuUp} size={1} /> }
-         
+        <Icon className="menuIcon menuUp" path={mdiMenuUp} size={1} /> 
+        : <Icon className="menuIcon menuDonw" path={mdiMenuDown} size={1} /> }
         </div>
-            <div  style={{display: dropdown ? "block" : "none"}}>
+            <div className="dropDown" style={{display: dropdown ? "block" : "none"}}>
                 <div className="toggle-menu">
-
                 <label htmlFor="college">College/Institute</label>
                 <input
                 type="text"
@@ -99,16 +96,15 @@ export default function Form(props) {
                 />
                 </div>
         </div>
-      </div>
+    </div>
       <div className="form experience--form">
       <div className="education--form-header"  onClick={toggleExperienceMenu} >
         <h2 className="form--header-text">Experience Details</h2>
         {
-        dropdownExp ? 
-         <Icon className="menuIcon menuDonw" path={mdiMenuDown} size={1} /> 
-        : <Icon className="menuIcon menuUp" path={mdiMenuUp} size={1} /> }
+        dropdownExp ? <Icon className="menuIcon menuUp" path={mdiMenuUp} size={1} />
+        : <Icon className="menuIcon menuDonw" path={mdiMenuDown} size={1} />  }
         </div>
-        <div  style={{display: dropdownExp ? "block" : "none"}}>
+        <div  className="dropDown" style={{display: dropdownExp ? "block" : "none"}}>
             <div className="toggle-menu">
         <label htmlFor="company">Company Name</label>
         <input
