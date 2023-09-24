@@ -74,7 +74,6 @@ export default function Form() {
     copyEdu.splice(index, 1);
     setEduDatas(copyEdu);
   }
-  console.log(edudatas);
   return (
     <div className="main">
       <div className="form-container">
