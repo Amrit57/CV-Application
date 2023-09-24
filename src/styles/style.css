@@ -10,6 +10,8 @@
   --input-bg: #e5e7eb;
   --navbar-bg: #99f6e4;
   --btn-color: #1e293b;
+  --delete-btn-bg: #dc2626;
+  --personal-bg: #082f49;
 }
 .navbar {
   height: 80px;
@@ -20,7 +22,8 @@
   background: var(--navbar-bg);
 }
 
-.navbar--btn {
+.navbar--btn,
+.btn {
   padding: 10px 14px;
   width: 160px;
   outline-offset: 0.2rem;
@@ -34,6 +37,13 @@
   border: none;
   font-weight: bold;
   color: var(--btn-color);
+}
+.btn-delete {
+  background: var(--delete-btn-bg);
+  color: white;
+}
+.btn-add {
+  background: var(--btn-bg);
 }
 .navbar--btn:hover {
   opacity: 0.8;
@@ -77,12 +87,13 @@ textarea,
   margin: 10px;
 }
 .personal {
-  background: grey;
+  background: var(--personal-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  color: white;
 }
 .contact-details {
   display: flex;
@@ -92,6 +103,7 @@ textarea,
 }
 .contact-details svg {
   width: 18px;
+  fill: white;
 }
 .c-detail {
   font-size: 0.88rem;
@@ -101,22 +113,24 @@ textarea,
   align-items: center;
 }
 .summary {
-  border-top: 2px solid red;
+  border-top: 2px solid var(--delete-btn-bg);
   padding: 10px;
   text-align: start;
 }
 .section-heading {
-  background: blue;
+  background: var(--navbar-bg);
+  padding: 5px;
   text-align: center;
+  color: var(--personal-bg);
 }
 .info-container {
   display: flex;
   gap: 20px;
   padding: 20px;
- 
+
   margin: 10px;
 }
-.bottom-line{
+.bottom-line {
   border-bottom: 2px solid green;
 }
 .info-container .left-side {
@@ -131,10 +145,11 @@ textarea,
   flex-direction: column;
   gap: 7px;
 }
-.bold{
+.bold {
   font-weight: bold;
 }
-.light, .summary{
+.light,
+.summary {
   font-size: 0.9rem;
   opacity: 0.7;
 }
