@@ -72,6 +72,11 @@
   flex-direction: column;
   margin: 20px 0px;
   gap: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 .personal-info input,
 textarea,
@@ -81,10 +86,10 @@ textarea,
   width: 340px;
 }
 .displayForm {
-  border: 2px solid black;
   width: 100%;
   height: 100%;
   margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .personal {
   background: var(--personal-bg);
@@ -94,6 +99,9 @@ textarea,
   align-items: center;
   padding: 20px;
   color: white;
+}
+.personal h1{
+  font-size: 2rem;
 }
 .contact-details {
   display: flex;
