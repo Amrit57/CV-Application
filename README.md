@@ -1,11 +1,11 @@
 # Live Preview - https://delicate-choux-6f87e5.netlify.app/
 
-*Feature : 
-            1. Load an Example Resume to see how it looks.
-            2. Clear your Resume at once and start fresh.
-            3. Add as many fields as you like.
-            4. Hide and Show details feature to enhance user experience.
-            5. Minimalistic design focuses more on the user's information. 
+# Feature
+- Load an Example Resume to see how it looks.
+- Clear your Resume at once and start fresh.
+- Add as many fields as you like.
+- Hide and Show details feature to enhance user experience.
+- Minimalistic design focuses more on the user's information. 
 
 # About
 This is my pratice project which I created during the Odin Project. In this project my main focus is to handle props, sharing states between the components, and understanding the core fundamentals of props, states, components, conditional rendering, and updating arrays and objects in React. This project also showcases the ability and understanding of controlled components and  handling a large number of input fields/form data.
