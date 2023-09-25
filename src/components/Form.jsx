@@ -88,28 +88,49 @@ export default function Form() {
       address: "",
       summary: "",
     });
-    setEduDatas([
-      {
-        companyName: "",
-        position: "",
-        startDate: "",
-        endDate: "",
-        description: "",
-      },
-    ]);
+    setExpDatas([]);
+    setEduDatas([]);
+  }
+  function handleLoadResume() {
+    setPersonalDatas({
+      fullName: "John Doe",
+      email: "johndoe@gmail.com",
+      phoneNumber: "+977-986777121",
+      address: "London, UK",
+      summary:
+        "What is the one thing that makes you stand out. Write a summary about yourself.",
+    });
     setExpDatas([
       {
-        schoolName: "",
-        degree: "",
-        country: "",
-        startDate: "",
-        endDate: "",
+        companyName: "Umbrella Inc.",
+        position: "UX & UI Designer",
+        startDate: "2022/08",
+        endDate: "Present",
+        description:
+          "Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android",
+      },
+      {
+        companyName: "Black Mesa Labs",
+        position: "UX Research Assistant",
+        startDate: "2019/02",
+        endDate: "2022/06",
+        description:
+          "Supported senior researchers on accessibility standards for the open web. Created and usability tested wireframes and prototypes. Produced interactive documentation for quick onboarding of new researchers.",
+      },
+    ]);
+    setEduDatas([
+      {
+        schoolName: "London City University",
+        degree: "Bachelors in Economics",
+        country: "UK",
+        startDate: "2018",
+        endDate: "2022",
       },
     ]);
   }
   return (
     <>
-      <Navbar clearResume={handleClearResume} />
+      <Navbar clearResume={handleClearResume} loadResume={handleLoadResume} />
       <div className="main">
         <div className="form-container">
           <Personal data={personalDatas} handleChange={handlePersonalChange} />
@@ -192,6 +213,9 @@ export default function Form() {
             <button className="btn btn-add" onClick={addExpInput}>
               Add
             </button>
+            <button className="btn" onClick={() => setDropDown(!dropDown)}>
+              {dropDown ? "Hide Details" : "Show Details"}
+            </button>
           </section>
           <section className="education-info">
             <div onClick={() => setDropEdu(!dropEdu)} className="section-title">
@@ -264,6 +288,9 @@ export default function Form() {
             })}
             <button className="btn btn-add" onClick={addEduInput}>
               Add
+            </button>
+            <button className="btn" onClick={() => setDropEdu(!dropEdu)}>
+              {dropEdu ? "Hide Details" : "Show Details"}
             </button>
           </section>
         </div>
