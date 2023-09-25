@@ -158,7 +158,7 @@ export default function Form() {
                   <label htmlFor="companyName">Company Name</label>
                   <input
                     type="text"
-                    id="companyName"
+                    placeholder="Enter company name"
                     name="companyName"
                     value={data.companyName}
                     onChange={(e) => handleExpChange(index, e)}
@@ -166,7 +166,7 @@ export default function Form() {
                   <label htmlFor="position">Position/Title</label>
                   <input
                     type="text"
-                    id="position"
+                    placeholder="Enter Position/Title"
                     name="position"
                     value={data.position}
                     onChange={(e) => handleExpChange(index, e)}
@@ -174,7 +174,7 @@ export default function Form() {
                   <label htmlFor="startDate">Start Date</label>
                   <input
                     type="text"
-                    id="startDate"
+                    placeholder="When did you start working here?"
                     name="startDate"
                     value={data.startDate}
                     onChange={(e) => handleExpChange(index, e)}
@@ -182,7 +182,7 @@ export default function Form() {
                   <label htmlFor="endDate">End Date</label>
                   <input
                     type="text"
-                    id="endDate"
+                    placeholder="Still working - Present / Enter End Date."
                     name="endDate"
                     value={data.endDate}
                     onChange={(e) => handleExpChange(index, e)}
@@ -190,7 +190,7 @@ export default function Form() {
                   <label htmlFor="description">Description</label>
                   <input
                     type="text"
-                    id="description"
+                    placeholder="What contributions/works did you do in this company."
                     name="description"
                     value={data.description}
                     onChange={(e) => handleExpChange(index, e)}
@@ -210,12 +210,14 @@ export default function Form() {
                 </div>
               );
             })}
-            <button className="btn btn-add" onClick={addExpInput}>
-              Add
-            </button>
-            <button className="btn" onClick={() => setDropDown(!dropDown)}>
-              {dropDown ? "Hide Details" : "Show Details"}
-            </button>
+            <div className="btn-container">
+              <button className="btn btn-add" onClick={addExpInput}>
+                Add
+              </button>
+              <button className="btn" onClick={() => setDropDown(!dropDown)}>
+                {dropDown ? "Hide Details" : "Show Details"}
+              </button>
+            </div>
           </section>
           <section className="education-info">
             <div onClick={() => setDropEdu(!dropEdu)} className="section-title">
@@ -239,13 +241,14 @@ export default function Form() {
                   <input
                     type="text"
                     name="schoolName"
+                    placeholder="Enter School/College Name"
                     value={eduData.schoolName}
                     onChange={(e) => handleEduChange(index, e)}
                   />
                   <label htmlFor="degree">Degree</label>
                   <input
                     type="text"
-                    id="degree"
+                    placeholder="Enter Degree/Certificate"
                     name="degree"
                     value={eduData.degree}
                     onChange={(e) => handleEduChange(index, e)}
@@ -254,6 +257,7 @@ export default function Form() {
                   <input
                     type="text"
                     name="country"
+                    placeholder="Enter Country Name"
                     value={eduData.country}
                     onChange={(e) => handleEduChange(index, e)}
                   />
@@ -261,6 +265,7 @@ export default function Form() {
                   <input
                     type="text"
                     name="startDate"
+                    placeholder="Enter Start Date"
                     value={eduData.startDate}
                     onChange={(e) => handleEduChange(index, e)}
                   />
@@ -268,6 +273,7 @@ export default function Form() {
                   <input
                     type="text"
                     name="endDate"
+                    placeholder="Study Completion Date"
                     value={eduData.endDate}
                     onChange={(e) => handleEduChange(index, e)}
                   />
@@ -286,12 +292,14 @@ export default function Form() {
                 </div>
               );
             })}
-            <button className="btn btn-add" onClick={addEduInput}>
-              Add
-            </button>
-            <button className="btn" onClick={() => setDropEdu(!dropEdu)}>
-              {dropEdu ? "Hide Details" : "Show Details"}
-            </button>
+            <div className="btn-container">
+              <button className="btn btn-add" onClick={addEduInput}>
+                Add
+              </button>
+              <button className="btn" onClick={() => setDropEdu(!dropEdu)}>
+                {dropEdu ? "Hide Details" : "Show Details"}
+              </button>
+            </div>
           </section>
         </div>
         <DisplayForm
