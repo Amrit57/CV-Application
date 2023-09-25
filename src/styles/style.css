@@ -68,6 +68,7 @@
 .personal-info,
 .experience-container,
 .education-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 20px 0px;
@@ -87,7 +88,7 @@ textarea,
 }
 .displayForm {
   width: 100%;
-  height: 100%;
+  height: clamp(1000px, 50%, 1100px);
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -100,7 +101,7 @@ textarea,
   padding: 20px;
   color: white;
 }
-.personal h1{
+.personal h1 {
   font-size: 2rem;
 }
 .contact-details {
@@ -160,4 +161,26 @@ textarea,
 .summary {
   font-size: 0.9rem;
   opacity: 0.7;
+}
+.section-title svg {
+  width: 20px;
+}
+.section-title {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: ease 0.3s;
+  padding: 5px;
+  border-radius: 5px;
+}
+.section-title:hover {
+  background: var(--navbar-bg);
+  opacity: 0.8;
+}
+.collapse {
+  padding: 10px;
+  margin: 10px 0px;
+  border: 2px solid rgba(0, 0, 0, 0.35);
+  border-radius: 5px;
 }

@@ -4,6 +4,8 @@ import DisplayForm from "./DisplayForm";
 import Navbar from "./Navbar";
 
 export default function Form() {
+  const [dropDown, setDropDown] = useState(true);
+  const [dropEdu, setDropEdu] = useState(true);
   const [personalDatas, setPersonalDatas] = useState({
     fullName: "",
     email: "",
@@ -105,8 +107,6 @@ export default function Form() {
       },
     ]);
   }
-
-
   return (
     <>
       <Navbar clearResume={handleClearResume} />
@@ -114,9 +114,25 @@ export default function Form() {
         <div className="form-container">
           <Personal data={personalDatas} handleChange={handlePersonalChange} />
           <section className="experience-info">
-            <h2>Experience Details</h2>
+            <div
+              onClick={() => setDropDown(!dropDown)}
+              className="section-title"
+            >
+              <h2>Experience Details</h2>
+              {dropDown ? (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>arrow-up</title>
+                  <path d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>arrow-down</title>
+                  <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z" />
+                </svg>
+              )}
+            </div>
             {expDatas.map((data, index) => {
-              return (
+              return dropDown === true ? (
                 <div key={index} id={index} className="experience-container">
                   <label htmlFor="companyName">Company Name</label>
                   <input
@@ -167,6 +183,10 @@ export default function Form() {
                     </button>
                   </div>
                 </div>
+              ) : (
+                <div key={index} className="collapse">
+                  <h3>{data.companyName}</h3>
+                </div>
               );
             })}
             <button className="btn btn-add" onClick={addExpInput}>
@@ -174,9 +194,22 @@ export default function Form() {
             </button>
           </section>
           <section className="education-info">
-            <h2>Education Details</h2>
+            <div onClick={() => setDropEdu(!dropEdu)} className="section-title">
+              <h2>Education Details</h2>
+              {dropEdu ? (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>arrow-up</title>
+                  <path d="M13,20H11V8L5.5,13.5L4.08,12.08L12,4.16L19.92,12.08L18.5,13.5L13,8V20Z" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>arrow-down</title>
+                  <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z" />
+                </svg>
+              )}
+            </div>
             {edudatas.map((eduData, index) => {
-              return (
+              return dropEdu ? (
                 <div key={index} id={index} className="education-container">
                   <label htmlFor="school">School</label>
                   <input
@@ -222,6 +255,10 @@ export default function Form() {
                       Delete
                     </button>
                   </div>
+                </div>
+              ) : (
+                <div key={index} className="collapse">
+                  <h3>{eduData.schoolName}</h3>
                 </div>
               );
             })}
