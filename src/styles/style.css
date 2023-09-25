@@ -45,7 +45,8 @@
 .btn-add {
   background: var(--btn-bg);
 }
-.navbar--btn:hover {
+.navbar--btn:hover,
+.btn:hover {
   opacity: 0.8;
 }
 .navbar--btn:active {
@@ -88,7 +89,8 @@ textarea,
 }
 .displayForm {
   width: 100%;
-  height: clamp(1000px, 50%, 1100px);
+  height: auto;
+  max-height: 1200px;
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
