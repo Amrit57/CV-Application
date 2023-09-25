@@ -8,7 +8,7 @@ export default function Personal({ data, handleChange }) {
       <input
         type="text"
         name="fullName"
-        id="fullName"
+        placeholder="Enter first and last name (recommended)"
         value={data.fullName}
         onChange={handleChange}
       />
@@ -16,7 +16,7 @@ export default function Personal({ data, handleChange }) {
       <input
         type="email"
         name="email"
-        id="email"
+        placeholder="Enter email (recommended)"
         value={data.email}
         onChange={handleChange}
       />
@@ -24,7 +24,7 @@ export default function Personal({ data, handleChange }) {
       <input
         type="tel"
         name="phoneNumber"
-        id="phoneNumber"
+        placeholder="Enter phone number (recommended)"
         value={data.phoneNumber}
         onChange={handleChange}
       />
@@ -32,14 +32,14 @@ export default function Personal({ data, handleChange }) {
       <input
         type="text"
         name="address"
-        id="address"
+        placeholder="Enter your address"
         value={data.address}
         onChange={handleChange}
       />
       <label htmlFor="summart">Summary</label>
       <textarea
         name="summary"
-        id="summary"
+        placeholder="Write a brief summary about yourself. / What is the one thing that makes you stand out?"
         value={data.summary}
         cols="40"
         rows="4"

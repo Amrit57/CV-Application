@@ -13,6 +13,7 @@
   --delete-btn-bg: #dc2626;
   --personal-bg: #082f49;
 }
+
 .navbar {
   height: 80px;
   display: flex;
@@ -21,13 +22,14 @@
   align-items: center;
   background: var(--navbar-bg);
 }
-
+.navbar--tab-container {
+  width: 350px;
+}
 .navbar--btn,
 .btn {
   padding: 10px 14px;
   width: 160px;
   outline-offset: 0.2rem;
-  margin-right: 20px;
   cursor: pointer;
   border-radius: 4px;
   background: var(--btn-bg);
@@ -142,7 +144,7 @@ textarea,
   margin: 10px;
 }
 .bottom-line {
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid var(--personal-bg);
 }
 .info-container .left-side {
   width: 30%;
@@ -185,4 +187,10 @@ textarea,
   margin: 10px 0px;
   border: 2px solid rgba(0, 0, 0, 0.35);
   border-radius: 5px;
+}
+.btn-container,
+.navbar--tab-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
 }
