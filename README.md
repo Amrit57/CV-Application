@@ -11,12 +11,12 @@
 This is my pratice project which I created during the Odin Project. In this project my main focus is to handle props, sharing states between the components, and understanding the core fundamentals of props, states, components, conditional rendering, and updating arrays and objects in React. This project also showcases the ability and understanding of controlled components and  handling a large number of input fields/form-data.
 
 # Technology used in this project
--React
--JSX
--CSS
--Vite
--Material Design Icon
--Netlify
+- React
+- JSX
+- CSS
+- Vite
+- Material Design Icon
+- Netlify
 
 # React + Vite
 
