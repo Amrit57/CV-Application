@@ -3,7 +3,7 @@ import React from "react";
 export default function Navbar({ clearResume, loadResume }) {
   return (
     <nav className="navbar">
-      <div>
+      <div className="logo-container">
         <h1 className="navbar--heading">CV Builder</h1>
         <span>By </span>
         <a

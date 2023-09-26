@@ -28,7 +28,7 @@
 .navbar--btn,
 .btn {
   padding: 10px 14px;
-  width: 160px;
+  width: 140px;
   outline-offset: 0.2rem;
   cursor: pointer;
   border-radius: 4px;
@@ -63,7 +63,7 @@
   gap: 30px;
 }
 .form-container {
-  width: 34vw;
+  min-width: 30%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -87,11 +87,15 @@ textarea,
 .experience-container input,
 .education-container input {
   padding: 6px;
-  width: 340px;
+  width: auto;
+  border-radius: 5px;
+  background: var(--input-bg);
 }
 .displayForm {
+  padding-bottom: 10px;
   width: 100%;
-  height: auto;
+  overflow: hidden;
+  height: 800px;
   max-height: 1200px;
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -193,4 +197,96 @@ textarea,
   display: flex;
   justify-content: space-between;
   padding: 2px;
+}
+@media screen and (max-width: 1100px) {
+  .btn,
+  .navbar--btn {
+    width: auto;
+    font-size: 0.8rem;
+  }
+  .form-container {
+    font-size: 0.8rem;
+  }
+  .personal-info input,
+  textarea,
+  .experience-container input,
+  .education-container input {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main {
+    display: block;
+    margin: auto;
+  }
+  .btn, .navbar--btn{
+    letter-spacing: 0;
+  }
+  .navbar--tab-container {
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .form-container {
+    width: 400px;
+    margin: auto;
+  }
+  .displayForm,
+  .personal p {
+    font-size: 0.8rem;
+    margin: auto;
+  }
+}
+@media (max-width: 480px) {
+  .form-container {
+    width: auto;
+    margin: 10px 0px;
+    font-size: 0.6rem;
+  }
+  .form-container input {
+    font-size: 0.6rem;
+  }
+  .navbar {
+    width: auto;
+    font-size: 0.7rem;
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+    gap: 5px;
+    width: auto;
+  }
+  .logo-container span {
+    display: block;
+  }
+  .personal h1 {
+    font-size: 1.3rem;
+  }
+  .personal p {
+    font-size: 0.6rem;
+  }
+  .btn,
+  .navbar--btn {
+    font-size: 0.4rem;
+    padding: 4px 7px;
+    width: 50px;
+  }
+  .contact-details {
+    gap: 6px;
+  }
+  .contact-details p {
+    font-size: 0.54rem;
+  }
+  .c-detail {
+    gap: 2px;
+  }
+  .contact-details svg {
+    width: 10px;
+  }
+  .displayForm,
+  .light {
+    font-size: 0.6rem;
+    height: auto;
+  }
 }
