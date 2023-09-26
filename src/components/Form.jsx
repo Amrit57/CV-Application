@@ -95,7 +95,7 @@ export default function Form() {
     setPersonalDatas({
       fullName: "John Doe",
       email: "johndoe@gmail.com",
-      phoneNumber: "+977-986777121",
+      phoneNumber: "(555) 555-1234",
       address: "London, UK",
       summary:
         "What is the one thing that makes you stand out. Write a summary about yourself.",

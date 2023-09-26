@@ -222,9 +222,12 @@ textarea:focus {
     padding: 0px 18px;
     margin: auto;
   }
+  .navbar{
+    padding: 12px;
+  }
   .navbar--tab-container {
     justify-content: flex-end;
-    gap: 10px;
+    gap: 20px;
   }
   .form-container {
     margin: 20px auto;
@@ -275,7 +278,7 @@ textarea:focus {
     width: 10px;
   }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 400px) {
   .navbar--tab-container{
     display: block;
   }
