@@ -82,14 +82,16 @@
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
-.personal-info input,
-textarea,
-.experience-container input,
-.education-container input {
+.form-container input,
+textarea {
   padding: 6px;
   width: auto;
   border-radius: 5px;
   background: var(--input-bg);
+}
+.form-container input:focus,
+textarea:focus {
+  background: white;
 }
 .displayForm {
   padding-bottom: 10px;
@@ -217,18 +219,15 @@ textarea,
 @media screen and (max-width: 768px) {
   .main {
     display: block;
+    padding: 0px 18px;
     margin: auto;
-  }
-  .btn, .navbar--btn{
-    letter-spacing: 0;
   }
   .navbar--tab-container {
     justify-content: flex-end;
     gap: 10px;
   }
   .form-container {
-    width: 400px;
-    margin: auto;
+    margin: 20px auto;
   }
   .displayForm,
   .personal p {
@@ -237,46 +236,37 @@ textarea,
   }
 }
 @media (max-width: 480px) {
-  .form-container {
-    width: auto;
-    margin: 10px 0px;
-    font-size: 0.6rem;
-  }
-  .form-container input {
-    font-size: 0.6rem;
-  }
-  .navbar {
-    width: auto;
-    font-size: 0.7rem;
-  }
   .logo-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     gap: 5px;
     width: auto;
   }
-  .logo-container span {
-    display: block;
+  .navbar {
+    width: 100%;
+    padding: 10px;
   }
-  .personal h1 {
-    font-size: 1.3rem;
-  }
-  .personal p {
-    font-size: 0.6rem;
-  }
-  .btn,
   .navbar--btn {
-    font-size: 0.4rem;
-    padding: 4px 7px;
-    width: 50px;
+    width: auto;
+    padding: 10px 2px;
+    font-size: 0.6rem;
+    width: 90px;
+    font-weight: bold;
+  }
+  .main {
+    padding: 8px;
+  }
+  .btn {
+    padding: 8px 12px;
+    width: auto;
   }
   .contact-details {
     gap: 6px;
   }
   .contact-details p {
-    font-size: 0.54rem;
+    font-size: 0.7rem;
   }
   .c-detail {
     gap: 2px;
@@ -284,9 +274,29 @@ textarea,
   .contact-details svg {
     width: 10px;
   }
+}
+@media screen and (max-width: 350px) {
+  .navbar--tab-container{
+    display: block;
+  }
+  .navbar--btn{
+    letter-spacing: 0;
+    padding:10px  5px;
+    margin: 0px 5px;
+    width: auto;
+  }
+  .navbar{
+    padding: 2px;
+  }
+  .contact-details  {
+    margin: 10px 0px;
+  }
+  .contact-details p{
+    font-size: 0.56rem;
+  }
   .displayForm,
   .light {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     height: auto;
   }
 }
