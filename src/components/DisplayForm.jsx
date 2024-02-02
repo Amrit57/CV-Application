@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function DisplayForm({ personalData, expData, eduData }) {
+export default function DisplayForm({
+  personalData,
+  profilePic,
+  expData,
+  eduData,
+}) {
   const expRender = expData.map((item, index) => {
     return (
       <div
@@ -50,7 +55,16 @@ export default function DisplayForm({ personalData, expData, eduData }) {
   return (
     <div className="displayForm">
       <section className="personal">
-        <h1>{personalData.fullName}</h1>
+        <div className="title-container">
+          <h1>{personalData.fullName}</h1>
+          {profilePic && (
+            <img
+              className="profilePic"
+              src={profilePic}
+              alt="Picture of Applicant"
+            />
+          )}
+        </div>
         <div className="contact-details">
           <div className="c-detail">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

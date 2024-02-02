@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Personal from "./Personal";
 import DisplayForm from "./DisplayForm";
 import Navbar from "./Navbar";
@@ -6,6 +6,16 @@ import Navbar from "./Navbar";
 export default function Form() {
   const [dropDown, setDropDown] = useState(true);
   const [dropEdu, setDropEdu] = useState(true);
+  const [file, setFile] = useState("");
+  const imageRef = useRef();
+  function handleRemoveImage() {
+    imageRef.current.value = "";
+    setFile("");
+  }
+  function handleImageChange(e) {
+    const imageSrc = URL.createObjectURL(e.target.files[0]);
+    setFile(imageSrc);
+  }
   const [personalDatas, setPersonalDatas] = useState({
     fullName: "",
     email: "",
@@ -133,7 +143,13 @@ export default function Form() {
       <Navbar clearResume={handleClearResume} loadResume={handleLoadResume} />
       <div className="main">
         <div className="form-container">
-          <Personal data={personalDatas} handleChange={handlePersonalChange} />
+          <Personal
+            removeImage={handleRemoveImage}
+            imageFile={imageRef}
+            handleImageChange={handleImageChange}
+            data={personalDatas}
+            handleChange={handlePersonalChange}
+          />
           <section className="experience-info">
             <div
               onClick={() => setDropDown(!dropDown)}
@@ -304,6 +320,7 @@ export default function Form() {
         </div>
         <DisplayForm
           personalData={personalDatas}
+          profilePic={file}
           expData={expDatas}
           eduData={edudatas}
         />

@@ -13,7 +13,33 @@
   --delete-btn-bg: #dc2626;
   --personal-bg: #082f49;
 }
-
+.title-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+.ImageInputContainer{
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.profilePic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.profileInput {
+  cursor: pointer;
+  width:auto;
+  border: 1px solid #ccc;
+  margin-right: 4px ;
+  padding: 6px 12px;
+}
 .navbar {
   height: 80px;
   display: flex;
@@ -39,6 +65,12 @@
   border: none;
   font-weight: bold;
   color: var(--btn-color);
+}
+.btn-remove {
+  padding: 7px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
 }
 .btn-delete {
   background: var(--delete-btn-bg);
@@ -146,7 +178,6 @@ textarea:focus {
   display: flex;
   gap: 20px;
   padding: 20px;
-
   margin: 10px;
 }
 .bottom-line {
@@ -222,7 +253,7 @@ textarea:focus {
     padding: 0px 18px;
     margin: auto;
   }
-  .navbar{
+  .navbar {
     padding: 12px;
   }
   .navbar--tab-container {
@@ -279,22 +310,22 @@ textarea:focus {
   }
 }
 @media screen and (max-width: 400px) {
-  .navbar--tab-container{
+  .navbar--tab-container {
     display: block;
   }
-  .navbar--btn{
+  .navbar--btn {
     letter-spacing: 0;
-    padding:10px  5px;
+    padding: 10px 5px;
     margin: 0px 5px;
     width: auto;
   }
-  .navbar{
+  .navbar {
     padding: 2px;
   }
-  .contact-details  {
+  .contact-details {
     margin: 10px 0px;
   }
-  .contact-details p{
+  .contact-details p {
     font-size: 0.56rem;
   }
   .displayForm,

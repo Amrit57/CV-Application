@@ -1,6 +1,11 @@
 import React from "react";
-
-export default function Personal({ data, handleChange }) {
+export default function Personal({
+  data,
+  imageFile,
+  handleImageChange,
+  handleChange,
+  removeImage
+}) {
   return (
     <section className="personal-info">
       <h2>Personal Details</h2>
@@ -36,7 +41,7 @@ export default function Personal({ data, handleChange }) {
         value={data.address}
         onChange={handleChange}
       />
-      <label htmlFor="summart">Summary</label>
+      <label htmlFor="summary">Summary</label>
       <textarea
         name="summary"
         placeholder="Write a brief summary about yourself. / What is the one thing that makes you stand out?"
@@ -46,6 +51,11 @@ export default function Personal({ data, handleChange }) {
         maxLength={500}
         onChange={handleChange}
       />
+      <label htmlFor="image">Upload Profile Photo</label>
+      <div className="ImageInputContainer">
+        <input className="profileInput" type="file" ref={imageFile} onChange={handleImageChange} />
+        <button className="btn-remove btn-delete" onClick={removeImage}>X</button>
+      </div>
     </section>
   );
 }
