@@ -261,6 +261,7 @@ textarea:focus {
     width: auto;
     font-size: 0.8rem;
   }
+  
   .form-container {
     font-size: 0.8rem;
   }
@@ -270,12 +271,20 @@ textarea:focus {
   .education-container input {
     font-size: 0.8rem;
   }
+  .profilePic {
+    width: 60px;
+    height: 60px;
+  }
 }
 @media screen and (max-width: 768px) {
   .main {
     display: block;
     padding: 0px 18px;
     margin: auto;
+  }
+  .image-container {
+    justify-content: center;
+    align-items: center;
   }
   .navbar {
     padding: 12px;
@@ -294,6 +303,18 @@ textarea:focus {
   }
 }
 @media (max-width: 480px) {
+  .profilePic {
+    width: 40px;
+    height: 40px;
+  }
+  .image-container {
+    justify-content: center;
+    align-items: center;
+  }
+  .certificate-Image {
+    width: 110px;
+    height: 110px;
+  }
   .logo-container {
     display: flex;
     justify-content: space-between;
@@ -336,6 +357,14 @@ textarea:focus {
 @media screen and (max-width: 400px) {
   .navbar--tab-container {
     display: block;
+  }
+  .image-container {
+    justify-content: center;
+    align-items: center;
+  }
+  .certificate-Image {
+    width: 120px;
+    height: 120px;
   }
   .navbar--btn {
     letter-spacing: 0;
