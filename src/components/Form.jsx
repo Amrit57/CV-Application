@@ -129,7 +129,6 @@ export default function Form() {
       address: "London, UK",
       summary:
         "What is the one thing that makes you stand out. Write a summary about yourself.",
-      imgUrl: "../src/images/p.jpg",
       showImage: true,
     });
     setExpDatas([

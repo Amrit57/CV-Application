@@ -93,7 +93,7 @@ export default function DisplayForm({
                     : { display: "none" }
                 }
                 className="profilePic"
-                src={personalData.imgUrl}
+                src="../src/images/p.jpg"
                 alt=""
               />
             )}
