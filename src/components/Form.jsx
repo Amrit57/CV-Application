@@ -5,14 +5,27 @@ import DisplayForm from "./DisplayForm";
 import Navbar from "./Navbar";
 
 export default function Form() {
-  const [dropDown, setDropDown] = useState(true);
-  const [dropEdu, setDropEdu] = useState(true);
+  const [dropDown, setDropDown] = useState(false);
+  const [dropEdu, setDropEdu] = useState(false);
   const [file, setFile] = useState("");
   const imageRef = useRef();
-  const [certficateImages, setCertificateImages] = useState([]);
+  const multipleImages = useRef();
+  const [certificateImages, setCertificateImages] = useState([]);
   function handleCertificateImageChange(e) {
-    console.log(e.target.files);
+    const datas = Array.from(e.target.files);
+    const datasToObject = datas.map((imageFile) => ({
+      imageFile,
+      imageURL: URL.createObjectURL(imageFile),
+    }));
+    setCertificateImages((prevData) => [...prevData, ...datasToObject]);
   }
+
+  function handleDeleteImages(image) {
+    const updatedImage = certificateImages.filter((item) => item !== image);
+    setCertificateImages(updatedImage);
+    multipleImages.current = certificateImages;
+  }
+
   function handleRemoveImage() {
     imageRef.current.value = "";
     setFile("");
@@ -329,7 +342,7 @@ export default function Form() {
           </section>
           <section>
             <Certificate
-              certficateImages={certficateImages}
+              multipleImageRef={multipleImages}
               handleChange={handleCertificateImageChange}
             />
           </section>
@@ -339,6 +352,8 @@ export default function Form() {
           profilePic={file}
           expData={expDatas}
           eduData={edudatas}
+          removeImage={handleDeleteImages}
+          certificateImages={certificateImages}
         />
       </div>
     </>

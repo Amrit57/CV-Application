@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import ImagePreview from "./ImagePreview";
 
 export default function DisplayForm({
   personalData,
   profilePic,
   expData,
   eduData,
+  certificateImages,
+  removeImage,
 }) {
   const expRender = expData.map((item, index) => {
     return (
@@ -52,6 +55,17 @@ export default function DisplayForm({
       </div>
     );
   });
+  const [previewImage, setPreviewImage] = useState(null);
+  function handlePreviewImage(imageURL) {
+    setPreviewImage(imageURL);
+    const body = document.getElementById("main");
+    body.className = "blur";
+  }
+  function closePreviewImage() {
+    setPreviewImage(null);
+    const body = document.getElementById("main");
+    body.className = "not-blur";
+  }
   return (
     <div className="displayForm">
       <section className="personal">
@@ -109,9 +123,30 @@ export default function DisplayForm({
         <h3 className="section-heading">Education Details</h3>
         {eduRender}
       </section>
-      <section>
+      <section className="certificate">
         <h3 className="section-heading"> Certficates & References</h3>
-          <img src="" alt="" />
+        <div className="image-container">
+          {certificateImages.map((image, index) => (
+            <div key={index}>
+              <img
+                className="certificate-Image"
+                src={image.imageURL}
+                onClick={() => handlePreviewImage(image.imageURL)}
+              />
+              <button
+                style={{ display: "block", width: "100px", margin: "auto" }}
+                className="btn btn-delete"
+                onClick={() => removeImage(image)}
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+          <ImagePreview
+            handleClick={closePreviewImage}
+            imageSrc={previewImage}
+          />
+        </div>
       </section>
     </div>
   );

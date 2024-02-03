@@ -13,6 +13,30 @@
   --delete-btn-bg: #dc2626;
   --personal-bg: #082f49;
 }
+.image-preview {
+  height: auto;
+  width: 1000px;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+.image-container {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+.certificate-Image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all ease-in-out 100ms;
+}
+.certificate-Image:hover {
+  opacity: 0.6;
+}
+
 .title-container {
   display: flex;
   width: 100%;
@@ -129,8 +153,7 @@ textarea:focus {
   padding-bottom: 10px;
   width: 100%;
   overflow: hidden;
-  height: 800px;
-  max-height: 1200px;
+  height: auto;
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
