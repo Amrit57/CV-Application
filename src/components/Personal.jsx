@@ -2,9 +2,10 @@ import React from "react";
 export default function Personal({
   data,
   imageFile,
+  file,
   handleImageChange,
   handleChange,
-  removeImage
+  removeImage,
 }) {
   return (
     <section className="personal-info">
@@ -53,8 +54,21 @@ export default function Personal({
       />
       <label htmlFor="image">Upload Profile Photo</label>
       <div className="ImageInputContainer">
-        <input className="profileInput" type="file" ref={imageFile} onChange={handleImageChange} />
-        <button className="btn-remove btn-delete" onClick={removeImage}>X</button>
+        <input
+          className="profileInput"
+          type="file"
+          ref={imageFile}
+          onChange={handleImageChange}
+        />
+        {file && (
+          <button
+            title="Remove Photo"
+            className="btn-remove btn-delete"
+            onClick={removeImage}
+          >
+            X
+          </button>
+        )}
       </div>
     </section>
   );

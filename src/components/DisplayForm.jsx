@@ -57,11 +57,22 @@ export default function DisplayForm({
       <section className="personal">
         <div className="title-container">
           <h1>{personalData.fullName}</h1>
-          {profilePic && (
+          {profilePic ? (
             <img
               className="profilePic"
               src={profilePic}
               alt="Picture of Applicant"
+            />
+          ) : (
+            <img
+              style={
+                personalData.showImage
+                  ? { display: "block" }
+                  : { display: "none" }
+              }
+              className="profilePic"
+              src={personalData.imgUrl}
+              alt=""
             />
           )}
         </div>
@@ -97,6 +108,10 @@ export default function DisplayForm({
       <section className="edu">
         <h3 className="section-heading">Education Details</h3>
         {eduRender}
+      </section>
+      <section>
+        <h3 className="section-heading"> Certficates & References</h3>
+          <img src="" alt="" />
       </section>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Personal from "./Personal";
+import Certificate from "./Certificate";
 import DisplayForm from "./DisplayForm";
 import Navbar from "./Navbar";
 
@@ -8,6 +9,10 @@ export default function Form() {
   const [dropEdu, setDropEdu] = useState(true);
   const [file, setFile] = useState("");
   const imageRef = useRef();
+  const [certficateImages, setCertificateImages] = useState([]);
+  function handleCertificateImageChange(e) {
+    console.log(e.target.files);
+  }
   function handleRemoveImage() {
     imageRef.current.value = "";
     setFile("");
@@ -97,6 +102,8 @@ export default function Form() {
       phoneNumber: "",
       address: "",
       summary: "",
+      imgUrl: "",
+      showImage: false,
     });
     setExpDatas([]);
     setEduDatas([]);
@@ -109,6 +116,8 @@ export default function Form() {
       address: "London, UK",
       summary:
         "What is the one thing that makes you stand out. Write a summary about yourself.",
+      imgUrl: "../src/images/p.jpg",
+      showImage: true,
     });
     setExpDatas([
       {
@@ -146,6 +155,7 @@ export default function Form() {
           <Personal
             removeImage={handleRemoveImage}
             imageFile={imageRef}
+            file={file}
             handleImageChange={handleImageChange}
             data={personalDatas}
             handleChange={handlePersonalChange}
@@ -316,6 +326,12 @@ export default function Form() {
                 {dropEdu ? "Hide Details" : "Show Details"}
               </button>
             </div>
+          </section>
+          <section>
+            <Certificate
+              certficateImages={certficateImages}
+              handleChange={handleCertificateImageChange}
+            />
           </section>
         </div>
         <DisplayForm

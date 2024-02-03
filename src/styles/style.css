@@ -19,7 +19,7 @@
   justify-content: center;
   position: relative;
 }
-.ImageInputContainer{
+.ImageInputContainer {
   width: 100%;
   display: flex;
   overflow: hidden;
@@ -27,7 +27,7 @@
 .profilePic {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: 40%;
   object-fit: cover;
   position: absolute;
   right: 0;
@@ -35,9 +35,9 @@
 }
 .profileInput {
   cursor: pointer;
-  width:auto;
+  width: auto;
   border: 1px solid #ccc;
-  margin-right: 4px ;
+  margin-right: 4px;
   padding: 6px 12px;
 }
 .navbar {
@@ -166,7 +166,8 @@ textarea:focus {
 .summary {
   border-top: 2px solid var(--delete-btn-bg);
   padding: 10px;
-  text-align: start;
+  text-align: center;
+  margin-top: 20px;
 }
 .section-heading {
   background: var(--navbar-bg);
