@@ -5,8 +5,8 @@ import DisplayForm from "./DisplayForm";
 import Navbar from "./Navbar";
 
 export default function Form() {
-  const [dropDown, setDropDown] = useState(false);
-  const [dropEdu, setDropEdu] = useState(false);
+  const [dropDown, setDropDown] = useState(true);
+  const [dropEdu, setDropEdu] = useState(true);
   const [file, setFile] = useState("");
   const imageRef = useRef();
   const multipleImages = useRef();
