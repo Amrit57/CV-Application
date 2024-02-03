@@ -137,7 +137,7 @@ export default function Form() {
         companyName: "Umbrella Inc.",
         position: "UX & UI Designer",
         startDate: "2022/08",
-        endDate: "Present",
+        endDate: "2023/1/12",
         description:
           "Designed and prototyped user interface patterns for various clients in various industries, ranging from self-service apps within the telecommunications-sector to mobile games for IOS and Android",
       },
@@ -212,7 +212,7 @@ export default function Form() {
                   />
                   <label htmlFor="startDate">Start Date</label>
                   <input
-                    type="text"
+                    type="date"
                     placeholder="When did you start working here?"
                     name="startDate"
                     value={data.startDate}
@@ -220,14 +220,14 @@ export default function Form() {
                   />
                   <label htmlFor="endDate">End Date</label>
                   <input
-                    type="text"
+                    type="date"
                     placeholder="Still working - Present / Enter End Date."
                     name="endDate"
                     value={data.endDate}
                     onChange={(e) => handleExpChange(index, e)}
                   />
                   <label htmlFor="description">Description</label>
-                  <input
+                  <textarea
                     type="text"
                     placeholder="What contributions/works did you do in this company."
                     name="description"
@@ -302,7 +302,7 @@ export default function Form() {
                   />
                   <label htmlFor="schoolStartDate">Start Date</label>
                   <input
-                    type="text"
+                    type="date"
                     name="startDate"
                     placeholder="Enter Start Date"
                     value={eduData.startDate}
@@ -310,7 +310,7 @@ export default function Form() {
                   />
                   <label htmlFor="schoolEndDate">End Date</label>
                   <input
-                    type="text"
+                    type="date"
                     name="endDate"
                     placeholder="Study Completion Date"
                     value={eduData.endDate}
@@ -347,14 +347,16 @@ export default function Form() {
             />
           </section>
         </div>
-        <DisplayForm
-          personalData={personalDatas}
-          profilePic={file}
-          expData={expDatas}
-          eduData={edudatas}
-          removeImage={handleDeleteImages}
-          certificateImages={certificateImages}
-        />
+        {personalDatas.fullName && (
+          <DisplayForm
+            personalData={personalDatas}
+            profilePic={file}
+            expData={expDatas}
+            eduData={edudatas}
+            removeImage={handleDeleteImages}
+            certificateImages={certificateImages}
+          />
+        )}
       </div>
     </>
   );
